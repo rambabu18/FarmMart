@@ -19,6 +19,7 @@ textarea{
   font: Montserrat,Arial, Helvetica, sans-serif;
   font-size: 1.6rem;
   
+  
 }
 
 .grid-container{
@@ -74,7 +75,7 @@ footer{
 }
 
 .main{
-  flex: 3 60rem;
+  flex: 2 40rem;
 }
 .sidebar{
  flex: 2 20rem;
@@ -139,4 +140,18 @@ footer{
 }
 .button.primary{
   background-color:#f0c040;
+}
+
+/* Filter */
+
+.filter{
+  display:flex;
+  justify-content: space-between;
+  padding: 1rem;
+  margin: 1rem;
+  border-bottom: 0.1rem #c0c0c0 solid;
+}
+
+.filter div{
+  flex: 1;
 }
