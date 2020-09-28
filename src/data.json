@@ -1,0 +1,49 @@
+{
+    "products":[
+        {
+        "id": "1",
+        "title":"Tomato",
+        "image":"/images/tomato.jpeg",
+        "description": "Fresh and hygiene Vegetables ",
+        "price": 20
+    },
+
+    {
+        "id": "2",
+        "title":"Onion",
+        "image":"/images/onion.jpeg",
+        "description": "Fresh and hygiene Vegetables ",
+        "price": 25
+    },
+
+    {
+        "id": "3",
+        "title":"Pandu Mirchi",
+        "image":"/images/pandumirchi.jpeg",
+        "description": "Fresh and hygiene Vegetables ",
+        "price": 50
+    },
+    {
+        "id": "4",
+        "title":"Aalu",
+        "image":"/images/aalu.jpeg",
+        "description": "Fresh and hygiene Vegetables ",
+        "price": 15
+    },
+    {
+        "id": "5",
+        "title":"Green Mirchi",
+        "image":"/images/green.jpeg",
+        "description": "Fresh and hygiene Vegetables ",
+        "price": 40
+    },
+    {
+        "id": "6",
+        "title":"BeetRoot",
+        "image":"/images/beetroot.jpeg",
+        "description": "Fresh and hygiene Vegetables ",
+        "price": 40
+    }
+
+]
+}
