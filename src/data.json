@@ -18,7 +18,7 @@
 
     {
         "id": "3",
-        "title":"Pandu Mirchi",
+        "title":"Red Mirchi",
         "image":"/images/pandumirchi.jpeg",
         "description": "Fresh and hygiene Vegetables ",
         "price": 50
@@ -44,6 +44,7 @@
         "description": "Fresh and hygiene Vegetables ",
         "price": 40
     }
+    
 
 ]
 }
