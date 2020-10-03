@@ -3,7 +3,9 @@ import React from 'react';
 import Cart from './components/Cart';
 import Filter from './components/Filter';
 import Products from './components/Products';
-import data from './data.json'
+import data from './data.json';
+import {Provider} from 'react-redux';
+import store from './store';
 
 class App extends React.Component {
   constructor(){
@@ -12,7 +14,7 @@ class App extends React.Component {
       products: data.products,
       sort : "",
       cartItems: localStorage.getItem("cartItems") ?
-       JSON.parse(localStorage.getItem("cartItems")) : []
+      JSON.parse(localStorage.getItem("cartItems")) : []
   }
   
   }
@@ -66,7 +68,8 @@ sortProducts=(event)=>{
  
   render(){
   return (
-    <div className="grid-container">
+    <Provider store={store} >
+      <div className="grid-container">
       <header>
 
         <a href="/" >Fresh Mart</a>
@@ -92,6 +95,8 @@ sortProducts=(event)=>{
       </main>
       <footer>All right are reserved</footer>
     </div>
+    </Provider>
+
   );
   }
 }

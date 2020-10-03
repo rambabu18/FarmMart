@@ -3,13 +3,18 @@ import formatCurrency from './util'
 import Fade from 'react-reveal/Fade'
 import Modal from 'react-modal'
 import Zoom from 'react-reveal/Zoom'
-export default class Products extends Component {
+import { connect } from 'react-redux'
+import {fetchProducts} from '../actions/productActions'
+ class Products extends Component {
     constructor(){
         super();
             this.state={
                 product:null
             }
         
+    }
+    componentDidMount(){
+        this.props.fetchProducts();
     }
 
     openMadal=(product)=>{
@@ -24,7 +29,13 @@ export default class Products extends Component {
         return (
             <div>
                 <Fade bottom cascade>
-                <ul className='products'>
+
+                    {
+
+                       !this.props.products ?
+                        (<div> Loading... </div> 
+                    ) : (
+                        <ul className='products'>
                     {this.props.products.map((product)=>(
                     <li key={product.id} >
                         <div className='product' >
@@ -33,13 +44,14 @@ export default class Products extends Component {
                         <p>{product.title}</p>
                         </a>
                         <div className="product-price" >
-                        <div>{formatCurrency(product.price)} </div>
+                        <div>{formatCurrency(product.price)} {"/Kg"} </div>
                         <button onClick={()=> this.props.addToCart(product)} className='button primary' >AddtoCart</button>
                         </div>
                         </div>
                     </li>
                     ))}
-                </ul>
+                </ul> )
+                    }
                 </Fade>
                 {product && <Modal isOpen={true} 
                 onRequestClose={this.closeModal}>
@@ -55,7 +67,7 @@ export default class Products extends Component {
                             {product.description}
                         </p>
                         <div className='product-price' >
-                        <div className='price' > {formatCurrency(product.price)} {"/Kg"}</div>
+                        <div className='price' > {formatCurrency(product.price)} {"/Kg"} </div>
                        <button className='button primary' onClick={()=>{
                           this.props.addToCart(product);
                           this.closeModal();
@@ -69,3 +81,5 @@ export default class Products extends Component {
         )
     }
 }
+
+export default connect((state)=>({products:state.products.items}),{fetchProducts})(Products);
