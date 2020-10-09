@@ -5,6 +5,7 @@ import formatCurrency from './util';
 import Modal from 'react-modal'
 import Zoom from 'react-reveal/Zoom'
 import {createOrder,clearOrder} from '../actions/orderActions'
+import {removeFromCart} from '../actions/cartAction'
  class Cart extends Component {
     constructor(props){
      super(props);
@@ -155,8 +156,9 @@ import {createOrder,clearOrder} from '../actions/orderActions'
 }
 
 export default connect((state)=>({
-    order: state.order.cartItems,
+   cartItems: state.cart.cartItems,
+    order: state.order.order,
     
 }),
-    {createOrder, clearOrder}
+    {removeFromCart ,createOrder, clearOrder}
 )(Cart);
